@@ -17,16 +17,10 @@ function App() {
   return (
     <div className="h-screen bg-black">
       <div className='h-32 bg-white flex justify-center items-center flex-col'>
-        <img className='h-28' src={logo}/>
+        <img className='h-28' src={logo} alt=''/>
       </div>
       <Oponente/>
-      <p className='text-white text-2xl mt-10 underline'>
-        Foto
-      </p>
-      <img className='h-28' src={f1}/>
-      <img className='h-28' src={f2}/>
-      <img className='h-28' src={f3}/>
-      <img className='h-28' src={f4}/>
+      <MeuCarro/>
       <p className='text-white text-2xl mt-10 underline'>
         Desafiar
       </p>
@@ -36,34 +30,52 @@ function App() {
 
 function Oponente() {
   return (
-    <div>
-      <p className='text-white text-2xl mt-10 underline'>
+    <div className='px-5'>
+      <p className='text-white text-2xl mt-10 mb-5 underline'>
         Oponente
       </p>
-      <div className='ml-4 mt-4'>
+      <div className='ml-4'>
         <div className='flex mb-2'>
-          <img className='object-cover h-14 w-14 rounded-full' src={golf_branco}/>
+          <img className='object-cover h-14 w-14 rounded-full' src={golf_branco} alt=''/>
           <p className='text-white text-2xl my-auto ml-4'>
             @mk7.snow
           </p>
         </div>
         <div className='flex mb-2'>
-          <img className='object-cover h-14 w-14 rounded-full' src={golf_nardo}/>
+          <img className='object-cover h-14 w-14 rounded-full' src={golf_nardo} alt=''/>
           <p className='text-white text-2xl my-auto ml-4'>
             @gti.nardo
           </p>
         </div>
         <div className='flex mb-2'>
-          <img className='object-cover h-14 w-14 rounded-full' src={golf_preto}/>
+          <img className='object-cover h-14 w-14 rounded-full' src={golf_preto} alt=''/>
           <p className='text-white text-2xl my-auto ml-4'>
             @black.panther
           </p>
         </div>
         <div className='flex mb-2'>
-          <img className='object-cover h-14 w-14 rounded-full' src={golf_lima}/>
+          <img className='object-cover h-14 w-14 rounded-full' src={golf_lima} alt=''/>
           <p className='text-white text-2xl my-auto ml-4'>
             @lima.mk7
           </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MeuCarro() {
+  return (
+    <div className='px-5'>
+      <p className='text-white text-2xl mt-10 mb-5 underline'>
+        Foto
+      </p>
+      <div className='w-fit'>
+        <div className="grid gap-2 grid-cols-2 grid-rows-2">
+          <img className='h-72 w-72 m-1 object-cover' src={f1} alt=''/>
+          <img className='h-72 w-72 m-1 object-cover' src={f2} alt=''/>
+          <img className='h-72 w-72 m-1 object-cover' src={f3} alt=''/>
+          <img className='h-72 w-72 m-1 object-cover' src={f4} alt=''/>
         </div>
       </div>
     </div>
