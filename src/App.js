@@ -1,6 +1,7 @@
 import './App.css';
 
 import logo from './imgs/logo.png';
+import swords from './imgs/swords.png';
 
 import golf_branco from './imgs/golf-branco.png';
 import golf_nardo from './imgs/golf-nardo.png';
@@ -15,15 +16,19 @@ import f4 from './imgs/f4.png';
 
 function App() {
   return (
-    <div className="h-screen bg-black">
-      <div className='h-32 bg-white flex justify-center items-center flex-col'>
-        <img className='h-28' src={logo} alt=''/>
-      </div>
+    <div className="h-fit bg-black">
+      <Header/>
       <Oponente/>
       <MeuCarro/>
-      <p className='text-white text-2xl mt-10 underline'>
-        Desafiar
-      </p>
+      <Desafiar/>
+    </div>
+  );
+}
+
+function Header() {
+  return (
+    <div className='h-32 bg-white flex justify-center items-center flex-col'>
+      <img className='h-28' src={logo} alt=''/>
     </div>
   );
 }
@@ -79,6 +84,19 @@ function MeuCarro() {
         </div>
       </div>
     </div>
+  );
+}
+
+function Desafiar() {
+  return (
+    <button className="bg-white hover:bg-gray-300 text-white font-bold py-2 px-10 mx-6 my-5 rounded">
+      <div className='w-fit'>
+        <div className="grid grid-cols-2">
+          <img className='h-6 w-6 m-1 object-cover align-bottom' src={swords} alt=''/>
+          <p className='my-auto text-black h-fit'>Desafiar</p>
+        </div>
+      </div>
+    </button>
   );
 }
 
