@@ -1,5 +1,7 @@
 import './App.css';
 
+import {useState} from 'react';
+
 import logo from './imgs/logo.png';
 import swords from './imgs/swords.png';
 
@@ -34,36 +36,70 @@ function Header() {
 }
 
 function Oponente() {
+
+  const [b_1, setB1] = useState('flex mb-2');
+  const [b_2, setB2] = useState('flex mb-2');
+  const [b_3, setB3] = useState('flex mb-2');
+  const [b_4, setB4] = useState('flex mb-2');
+
+  function selected(button) {
+
+    if (button === 'b-1') {
+      setB1('flex mb-2 bg-gray-800 rounded w-80 pl-3 py-1')
+      setB2('flex mb-2')
+      setB3('flex mb-2')
+      setB4('flex mb-2')
+    }
+    if (button === 'b-2') {
+      setB1('flex mb-2')
+      setB2('flex mb-2 bg-gray-800 rounded w-80 pl-3 py-1')
+      setB3('flex mb-2')
+      setB4('flex mb-2')
+    }
+    if (button === 'b-3') {
+      setB1('flex mb-2')
+      setB2('flex mb-2')
+      setB3('flex mb-2 bg-gray-800 rounded w-80 pl-3 py-1')
+      setB4('flex mb-2')
+    }
+    if (button === 'b-4') {
+      setB1('flex mb-2')
+      setB2('flex mb-2')
+      setB3('flex mb-2')
+      setB4('flex mb-2 bg-gray-800 rounded w-80 pl-3 py-1')
+    }
+  }
+
   return (
     <div className='px-5'>
       <p className='text-white text-2xl mt-10 mb-5 underline'>
         Oponente
       </p>
       <div className='ml-4'>
-        <div className='flex mb-2'>
+        <button id='b-1' className={b_1} onClick={() => selected("b-1")}>
           <img className='object-cover h-14 w-14 rounded-full' src={golf_branco} alt=''/>
           <p className='text-white text-2xl my-auto ml-4'>
             @mk7.snow
           </p>
-        </div>
-        <div className='flex mb-2'>
+        </button>
+        <button id='b-2' className={b_2} onClick={() => selected("b-2")}>
           <img className='object-cover h-14 w-14 rounded-full' src={golf_nardo} alt=''/>
           <p className='text-white text-2xl my-auto ml-4'>
             @gti.nardo
           </p>
-        </div>
-        <div className='flex mb-2'>
+        </button>selected
+        <button id='b-3' className={b_3} onClick={() => selected("b-3")}>
           <img className='object-cover h-14 w-14 rounded-full' src={golf_preto} alt=''/>
           <p className='text-white text-2xl my-auto ml-4'>
             @black.panther
           </p>
-        </div>
-        <div className='flex mb-2'>
+        </button>
+        <button id='b-4' className={b_4} onClick={() => selected("b-4")}>
           <img className='object-cover h-14 w-14 rounded-full' src={golf_lima} alt=''/>
           <p className='text-white text-2xl my-auto ml-4'>
             @lima.mk7
           </p>
-        </div>
+        </button>
       </div>
     </div>
   );
