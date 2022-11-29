@@ -87,7 +87,7 @@ function Oponente() {
           <p className='text-white text-2xl my-auto ml-4'>
             @gti.nardo
           </p>
-        </button>selected
+        </button>
         <button id='b-3' className={b_3} onClick={() => selected("b-3")}>
           <img className='object-cover h-14 w-14 rounded-full' src={golf_preto} alt=''/>
           <p className='text-white text-2xl my-auto ml-4'>
@@ -106,6 +106,44 @@ function Oponente() {
 }
 
 function MeuCarro() {
+  
+  const [i1, setClassImg1] = useState('h-72 w-72 m-1 object-cover');
+  const [i2, setClassImg2] = useState('h-72 w-72 m-1 object-cover');
+  const [i3, setClassImg3] = useState('h-72 w-72 m-1 object-cover');
+  const [i4, setClassImg4] = useState('h-72 w-72 m-1 object-cover');
+
+  function selected1() {
+
+    setClassImg1('h-72 w-72 m-1 object-cover')
+    setClassImg2('h-72 w-72 m-1 object-cover opacity-60')
+    setClassImg3('h-72 w-72 m-1 object-cover opacity-60')
+    setClassImg4('h-72 w-72 m-1 object-cover opacity-60')
+  }
+
+  function selected2() {
+
+    setClassImg1('h-72 w-72 m-1 object-cover opacity-60')
+    setClassImg2('h-72 w-72 m-1 object-cover')
+    setClassImg3('h-72 w-72 m-1 object-cover opacity-60')
+    setClassImg4('h-72 w-72 m-1 object-cover opacity-60')
+  }
+
+  function selected3() {
+
+    setClassImg1('h-72 w-72 m-1 object-cover opacity-60')
+    setClassImg2('h-72 w-72 m-1 object-cover opacity-60')
+    setClassImg3('h-72 w-72 m-1 object-cover')
+    setClassImg4('h-72 w-72 m-1 object-cover opacity-60')
+  }
+
+  function selected4() {
+
+    setClassImg1('h-72 w-72 m-1 object-cover opacity-60')
+    setClassImg2('h-72 w-72 m-1 object-cover opacity-60')
+    setClassImg3('h-72 w-72 m-1 object-cover opacity-60')
+    setClassImg4('h-72 w-72 m-1 object-cover')
+  }
+
   return (
     <div className='px-5'>
       <p className='text-white text-2xl mt-10 mb-5 underline'>
@@ -113,10 +151,10 @@ function MeuCarro() {
       </p>
       <div className='w-fit'>
         <div className="grid gap-2 grid-cols-2 grid-rows-2">
-          <img className='h-72 w-72 m-1 object-cover' src={f1} alt=''/>
-          <img className='h-72 w-72 m-1 object-cover' src={f2} alt=''/>
-          <img className='h-72 w-72 m-1 object-cover' src={f3} alt=''/>
-          <img className='h-72 w-72 m-1 object-cover' src={f4} alt=''/>
+          <img className={i1} onClick={() => selected1()} src={f1} alt=''/>
+          <img className={i2} onClick={() => selected2()} src={f2} alt=''/>
+          <img className={i3} onClick={() => selected3()} src={f3} alt=''/>
+          <img className={i4} onClick={() => selected4()} src={f4} alt=''/>
         </div>
       </div>
     </div>
