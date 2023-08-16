@@ -37,6 +37,7 @@ function Header() {
 
 function Oponente() {
 
+  const [b_selected, setBSelected] = useState('none');
   const [b_1, setB1] = useState('flex mb-2');
   const [b_2, setB2] = useState('flex mb-2');
   const [b_3, setB3] = useState('flex mb-2');
@@ -44,25 +45,29 @@ function Oponente() {
 
   function selected(button) {
 
-    if (button === 'b-1') {
+    if (button === 'b1') {
+      setBSelected('b1')
       setB1('flex mb-2 bg-gray-800 rounded w-80 pl-3 py-1')
       setB2('flex mb-2')
       setB3('flex mb-2')
       setB4('flex mb-2')
     }
-    if (button === 'b-2') {
+    if (button === 'b2') {
+      setBSelected('b2')
       setB1('flex mb-2')
       setB2('flex mb-2 bg-gray-800 rounded w-80 pl-3 py-1')
       setB3('flex mb-2')
       setB4('flex mb-2')
     }
-    if (button === 'b-3') {
+    if (button === 'b3') {
+      setBSelected('b3')
       setB1('flex mb-2')
       setB2('flex mb-2')
       setB3('flex mb-2 bg-gray-800 rounded w-80 pl-3 py-1')
       setB4('flex mb-2')
     }
-    if (button === 'b-4') {
+    if (button === 'b4') {
+      setBSelected('b4')
       setB1('flex mb-2')
       setB2('flex mb-2')
       setB3('flex mb-2')
@@ -162,12 +167,17 @@ function MeuCarro() {
 }
 
 function Desafiar() {
+
+  function request() {
+    alert(3);
+  }
+
   return (
     <button className="bg-white hover:bg-gray-300 text-white font-bold py-2 px-10 mx-6 my-5 rounded">
       <div className='w-fit'>
         <div className="grid grid-cols-2">
           <img className='h-6 w-6 m-1 object-cover align-bottom' src={swords} alt=''/>
-          <p className='my-auto text-black h-fit'>Desafiar</p>
+          <p className='my-auto text-black h-fit' onClick={ () => request() }>Desafiar</p>
         </div>
       </div>
     </button>
